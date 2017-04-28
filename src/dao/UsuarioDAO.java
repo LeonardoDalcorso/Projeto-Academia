@@ -5,7 +5,7 @@
  */
 package dao;
 
-import entidades.Usuario;
+import entidade.Usuario;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;

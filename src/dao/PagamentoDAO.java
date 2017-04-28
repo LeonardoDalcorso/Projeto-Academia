@@ -5,8 +5,8 @@
  */
 package dao;
 
-import entidades.Aluno;
-import entidades.Pagamento;
+import entidade.Aluno;
+import entidade.Pagamento;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
