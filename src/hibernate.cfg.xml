@@ -46,12 +46,12 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db_academia?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">fernando120</property>
-    <property name="hibernate.hbm2ddl.auto">create</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
-    <mapping class="entidades.Aluno"/>
-    <mapping class="entidades.Medida"/>
-    <mapping class="entidades.Pagamento"/>
-    <mapping class="entidades.Usuario"/>
+    <property name="hibernate.hbm2ddl.auto">validate</property>
+    <mapping class="entidade.Aluno"/>
+    <mapping class="entidade.Medida"/>
+    <mapping class="entidade.Pagamento"/>
+    <mapping class="entidade.Usuario"/>
   </session-factory>
 </hibernate-configuration>

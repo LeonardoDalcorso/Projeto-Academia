@@ -33,9 +33,7 @@ public class Usuario {
     @Column (length = 14, nullable = false)
     private String usu_senha;
     
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Aluno usu_aluno;
+ 
     
     public String getUsu_tipo_usuario() {
         return usu_tipo_usuario;
@@ -45,14 +43,7 @@ public class Usuario {
         this.usu_tipo_usuario = usu_tipo_usuario;
     }
 
-    public Aluno getUsu_aluno() {
-        return usu_aluno;
-    }
-
-    public void setUsu_aluno(Aluno usu_aluno) {
-        this.usu_aluno = usu_aluno;
-    }
-    
+       
     public Integer getUsu_cod() {
         return usu_cod;
     }
