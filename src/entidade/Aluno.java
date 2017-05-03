@@ -40,6 +40,19 @@ public class Aluno {
     
     @Column (length = 8, unique = true) //Data do inicio do pagamento 
     private String alu_data_inicioPagamento;
+    
+    @Column (length = 30)
+    private String alu_endereco;
+    
+    @Column (length = 30)
+    private String alu_bairro;
+    
+    @Column (length = 30)
+    private int alu_numero;
+    
+    @Column (length = 30)
+    private int alu_cep;
+    
 
     public Integer getAlu_cod() {
         return alu_cod;
