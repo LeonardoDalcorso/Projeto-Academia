@@ -5,17 +5,23 @@
  */
 package telas;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Wesley Fernando
  */
 public class Cadastro_Aluno extends javax.swing.JFrame {
 
+    
+    
     /**
      * Creates new form Cadastro_Cliente
      */
     public Cadastro_Aluno() {
         initComponents();
+        
+        
     }
 
     /**
@@ -29,7 +35,7 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        btListar = new javax.swing.JButton();
+        btNovo = new javax.swing.JButton();
         btListar1 = new javax.swing.JButton();
         btListar2 = new javax.swing.JButton();
         btListar3 = new javax.swing.JButton();
@@ -58,20 +64,22 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTextField10 = new javax.swing.JTextField();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+
+        setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), null, null));
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), null, null));
 
-        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Novo.png"))); // NOI18N
-        btListar.addActionListener(new java.awt.event.ActionListener() {
+        btNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/novo.png"))); // NOI18N
+        btNovo.setName(""); // NOI18N
+        btNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btListarActionPerformed(evt);
+                btNovoActionPerformed(evt);
             }
         });
+        btNovo.setToolTipText("Novo");
 
         btListar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Listar.png"))); // NOI18N
         btListar1.addActionListener(new java.awt.event.ActionListener() {
@@ -87,21 +95,21 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             }
         });
 
-        btListar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Alterar.png"))); // NOI18N
+        btListar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Editar.png"))); // NOI18N
         btListar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar3ActionPerformed(evt);
             }
         });
 
-        btListar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/excluir.png"))); // NOI18N
+        btListar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/lixeira.png"))); // NOI18N
         btListar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar4ActionPerformed(evt);
             }
         });
 
-        btListar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Cancelar 2.png"))); // NOI18N
+        btListar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Cancelar.png"))); // NOI18N
         btListar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar5ActionPerformed(evt);
@@ -114,7 +122,7 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btListar2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -127,11 +135,11 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
                 .addComponent(btListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btListar, btListar1, btListar2, btListar3, btListar4, btListar5});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btListar1, btListar2, btListar3, btListar4, btListar5, btNovo});
 
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btListar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btListar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btListar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -139,7 +147,7 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             .addComponent(btListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btListar, btListar1, btListar2, btListar3, btListar4, btListar5});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btListar1, btListar2, btListar3, btListar4, btListar5, btNovo});
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Aluno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 15))); // NOI18N
 
@@ -309,12 +317,6 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Ajuda");
-        jMenu1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -343,9 +345,9 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             
             }
     
-    private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
+    private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
         lista();
-    }//GEN-LAST:event_btListarActionPerformed
+    }//GEN-LAST:event_btNovoActionPerformed
 
     private void btListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListar1ActionPerformed
         // TODO add your handling code here:
@@ -412,12 +414,12 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btListar;
     private javax.swing.JButton btListar1;
     private javax.swing.JButton btListar2;
     private javax.swing.JButton btListar3;
     private javax.swing.JButton btListar4;
     private javax.swing.JButton btListar5;
+    private javax.swing.JButton btNovo;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -430,8 +432,6 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -50,8 +50,8 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
         btListar3 = new javax.swing.JButton();
         btListar4 = new javax.swing.JButton();
         btListar5 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+
+        setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), null, null));
@@ -147,21 +147,21 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
             }
         });
 
-        btListar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Alterar.png"))); // NOI18N
+        btListar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Editar.png"))); // NOI18N
         btListar3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar3ActionPerformed(evt);
             }
         });
 
-        btListar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/excluir.png"))); // NOI18N
+        btListar4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/lixeira.png"))); // NOI18N
         btListar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar4ActionPerformed(evt);
             }
         });
 
-        btListar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Cancelar 2.png"))); // NOI18N
+        btListar5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Cancelar.png"))); // NOI18N
         btListar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btListar5ActionPerformed(evt);
@@ -221,11 +221,6 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jMenu1.setText("Ajuda");
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,6 +309,8 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
             inserirUsuario();
             JOptionPane.showMessageDialog(this, "Usuario cadastrada com Sucesso!");
         }
+        
+        
         /*else if(tipoCadastro.equals("alteracao")){
             try {
                 alterarPessoa();
@@ -382,8 +379,6 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

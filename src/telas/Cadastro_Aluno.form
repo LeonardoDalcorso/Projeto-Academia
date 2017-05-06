@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ajuda"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="13" style="1"/>
-            </Property>
-          </Properties>
-        </Menu>
-      </SubComponents>
-    </Menu>
-  </NonVisualComponents>
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
@@ -111,7 +99,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btListar" linkSize="2" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="btNovo" linkSize="2" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btListar2" linkSize="2" min="-2" pref="59" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -127,7 +115,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btListar" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btNovo" linkSize="1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btListar2" linkSize="1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btListar3" linkSize="1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btListar4" linkSize="1" alignment="0" max="32767" attributes="0"/>
@@ -137,15 +125,19 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btListar">
+            <Component class="javax.swing.JButton" name="btNovo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/Novo.png"/>
+                  <Image iconType="3" name="/icon/novo.png"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btNovoActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="btNovo.setToolTipText(&quot;Novo&quot;);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="btListar1">
               <Properties>
@@ -170,7 +162,7 @@
             <Component class="javax.swing.JButton" name="btListar3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/Alterar.png"/>
+                  <Image iconType="3" name="/icon/Editar.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -180,7 +172,7 @@
             <Component class="javax.swing.JButton" name="btListar4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/excluir.png"/>
+                  <Image iconType="3" name="/icon/lixeira.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -190,7 +182,7 @@
             <Component class="javax.swing.JButton" name="btListar5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/icon/Cancelar 2.png"/>
+                  <Image iconType="3" name="/icon/Cancelar.png"/>
                 </Property>
               </Properties>
               <Events>
