@@ -42,7 +42,9 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         cbTipo = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        tfSenha = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        cbAtivo = new javax.swing.JComboBox<>();
+        tfSenha = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         btNovo = new javax.swing.JButton();
         btListar1 = new javax.swing.JButton();
@@ -69,20 +71,20 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel10.setText("Tipo:");
+        jLabel10.setText("Função");
 
-        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo", "Balconista", "Gerente" }));
+        cbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Administrativo", "Balconista", "Gerente" }));
         cbTipo.setEnabled(false);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("Senha:");
 
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel11.setText("Status");
+
+        cbAtivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Ativo", "Inativo" }));
+
         tfSenha.setEditable(false);
-        tfSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfSenhaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,20 +92,27 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfNome, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbAtivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(tfSenha)))))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,9 +126,11 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(cbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -247,16 +258,27 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNomeActionPerformed
 
-    private void tfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfSenhaActionPerformed
-
+    public boolean verificarCampos() {
+        if (!tfNome.getText().trim().equals("")) {
+            return true;
+        }
+        return false;
+    }
+    
+    public void limpaCampo(){
+        tfNome.setText("");
+        tfSenha.setText("");
+        cbTipo.setSelectedItem(" ");
+        cbAtivo.setSelectedItem(" ");
+    }
+    
     public void novoUsuario() {
         
         habilitarCampos();
         tfNome.setText("");
         tfSenha.setText("");
-        cbTipo.setSelectedItem("");
+        cbTipo.setSelectedItem(" ");
+        cbAtivo.setSelectedItem(" ");
     }
     
      public void habilitarCampos() {
@@ -273,6 +295,7 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
         tfSenha.setEditable(false);
         cbTipo.setEnabled(false);
         btSalvar.setEnabled(false);
+        
     }
     
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
@@ -294,9 +317,17 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
             
             usuario.setUsu_nome(tfNome.getText());
             usuario.setUsu_senha(tfSenha.getText());
-            usuario.setUsu_tipo_usuario(String.valueOf(cbTipo.getSelectedItem()));
+            usuario.setUsu_tipo((String) cbTipo.getSelectedItem());            
+                       
+            if(cbAtivo.getSelectedItem().equals("Ativo")){
+                usuario.setAtivo(true);
+            }
+            else if(cbAtivo.getSelectedItem().equals("Inativo")){
+                usuario.setAtivo(false);
+            }
             
             usuarioDAO.inserir(usuario);
+            JOptionPane.showMessageDialog(null,"Cadastrado com sucesso");
             
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar Usuario" + e);
@@ -307,10 +338,12 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         if(tipoCadastro.equals("novo")){
             inserirUsuario();
-            JOptionPane.showMessageDialog(this, "Usuario cadastrada com Sucesso!");
+            limpaCampo();
+            desabilitarCampos();
+                
+                        
         }
-        
-        
+                
         /*else if(tipoCadastro.equals("alteracao")){
             try {
                 alterarPessoa();
@@ -321,6 +354,8 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
     }*/
     }//GEN-LAST:event_btSalvarActionPerformed
 
+  
+    
     private void btListar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListar3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btListar3ActionPerformed
@@ -375,15 +410,17 @@ public class Cadastro_Usuario extends javax.swing.JFrame {
     private javax.swing.JButton btListar5;
     private javax.swing.JButton btNovo;
     private javax.swing.JButton btSalvar;
+    private javax.swing.JComboBox<String> cbAtivo;
     private javax.swing.JComboBox<String> cbTipo;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField tfNome;
-    private javax.swing.JTextField tfSenha;
+    private javax.swing.JPasswordField tfSenha;
     // End of variables declaration//GEN-END:variables
 
 }

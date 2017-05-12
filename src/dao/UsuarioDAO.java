@@ -10,6 +10,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import util.HibernateUtil;
 
 /**
@@ -72,7 +73,31 @@ public class UsuarioDAO {
         
         return usuarios;
     }    
+    //Buscar por nome, controle de acesso
+    public Usuario buscarPorNome(String usu_nome){
+        Session sessao = HibernateUtil.getSessionFactory().openSession();
+        
+        Criteria criterio = sessao.createCriteria(Usuario.class);        
+        
+        criterio.add(Restrictions.eq("usu_nome", usu_nome));
+        
+        //Busca apenas um nome
+        Usuario usuario = (Usuario) criterio.uniqueResult();
+        
+        return usuario;
+    }
     
-    
+    public Usuario buscarPorSenha(String usu_senha){
+        Session sessao = HibernateUtil.getSessionFactory().openSession();
+        
+        Criteria criterio = sessao.createCriteria(Usuario.class);        
+        
+        criterio.add(Restrictions.eq("usu_senha", usu_senha));
+        
+        //Busca apenas uma senha
+        Usuario usuario = (Usuario) criterio.uniqueResult();
+        
+        return usuario;
+    }
     
 }

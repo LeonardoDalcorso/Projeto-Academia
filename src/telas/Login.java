@@ -6,6 +6,8 @@
 package telas;
 
 import dao.UsuarioDAO;
+import entidade.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,20 +39,28 @@ public class Login extends javax.swing.JFrame {
         tfNomeUsuario = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         btAcessar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btSair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login - Academia");
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), null, null));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Login - Academia", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 16), new java.awt.Color(0, 102, 102))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
         jLabel1.setText("Usuario:");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
         jLabel2.setText("Senha:");
+
+        tfSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSenhaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -68,7 +78,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,11 +104,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Sair.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btSair.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Sair.png"))); // NOI18N
+        btSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btSairActionPerformed(evt);
             }
         });
 
@@ -107,22 +117,22 @@ public class Login extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(58, 58, 58)
                 .addComponent(btAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(70, 70, 70)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btSair, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btAcessar, jButton2});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btAcessar, btSair});
 
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btAcessar)
-            .addComponent(jButton2)
+            .addComponent(btSair)
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btAcessar, jButton2});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btAcessar, btSair});
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,9 +140,9 @@ public class Login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -166,14 +176,60 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    public void sair(){
+        
+        
+        int resposta = JOptionPane.showConfirmDialog(this, "Voçê deseja sair do Sistema?", "Confirmação",
+            JOptionPane.YES_NO_OPTION);
+                
+        if (resposta == JOptionPane.YES_OPTION) {
+           this.dispose();
+        
+        }
+        
+    }
+    
+    private void btSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSairActionPerformed
+        sair();
+    }//GEN-LAST:event_btSairActionPerformed
 
+    public void acessar(){
+         
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = usuarioDAO.buscarPorNome(tfNomeUsuario.getText().trim()); 
         
+        if(usuario == null){
+            JOptionPane.showMessageDialog(null, "Usuario e/ou Senha Invalida! Usuario");
+            
+        }
+        else if(!usuario.getAtivo()){
+            JOptionPane.showMessageDialog(null, "Usuario bloqueado!!!");
+            
+        }
+        else if(!usuario.getUsu_senha().equals(tfSenha.getText())){
+           
+            JOptionPane.showMessageDialog(null, "Usuario e/ou Senha Invalida! Senha");
+            
+        }
+        else {
+            Principal principal = new Principal();
+            principal.setVisible(true);
+            this.dispose();
+        }
+        
+       
+    } 
+    
+   
+    
+    
     private void btAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAcessarActionPerformed
-        
+        acessar();
     }//GEN-LAST:event_btAcessarActionPerformed
+
+    private void tfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,7 +268,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAcessar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

@@ -36,7 +36,7 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btNovo = new javax.swing.JButton();
-        btListar1 = new javax.swing.JButton();
+        btListar = new javax.swing.JButton();
         btSalvar = new javax.swing.JButton();
         btListar3 = new javax.swing.JButton();
         btListar4 = new javax.swing.JButton();
@@ -83,10 +83,10 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
         });
         btNovo.setToolTipText("Novo");
 
-        btListar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Listar.png"))); // NOI18N
-        btListar1.addActionListener(new java.awt.event.ActionListener() {
+        btListar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Listar.png"))); // NOI18N
+        btListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btListar1ActionPerformed(evt);
+                btListarActionPerformed(evt);
             }
         });
 
@@ -135,10 +135,10 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btListar5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btListar1, btListar3, btListar4, btListar5, btNovo, btSalvar});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btListar, btListar3, btListar4, btListar5, btNovo, btSalvar});
 
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,10 +147,10 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             .addComponent(btListar3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btListar4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btListar5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(btListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btListar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btListar1, btListar3, btListar4, btListar5, btNovo, btSalvar});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btListar, btListar3, btListar4, btListar5, btNovo, btSalvar});
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastrar Aluno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 15))); // NOI18N
 
@@ -360,12 +360,12 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
             }
     
     private void btNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNovoActionPerformed
-        lista();
+        
     }//GEN-LAST:event_btNovoActionPerformed
 
-    private void btListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btListar1ActionPerformed
+    private void btListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btListarActionPerformed
+        lista();
+    }//GEN-LAST:event_btListarActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
         // TODO add your handling code here:
@@ -428,7 +428,7 @@ public class Cadastro_Aluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btListar1;
+    private javax.swing.JButton btListar;
     private javax.swing.JButton btListar3;
     private javax.swing.JButton btListar4;
     private javax.swing.JButton btListar5;

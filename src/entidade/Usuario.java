@@ -9,8 +9,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 /**
  *
@@ -24,26 +22,43 @@ public class Usuario {
     @GeneratedValue
     private Integer usu_cod;
     
-    @Column(length = 30, nullable = false)
+    @Column(length = 30, nullable = false, unique = false)
     private String  usu_nome;
     
     @Column(length = 50, nullable = false)
-    private String usu_tipo_usuario;
-
+    private String usu_tipo;
+    
     @Column (length = 14, nullable = false)
     private String usu_senha;
     
- 
+    @Column(nullable = false)
+    private Boolean usu_ativo;
+
+    public String getUsu_tipo() {
+        return usu_tipo;
+    }
+
+    public void setUsu_tipo(String usu_tipo) {
+        this.usu_tipo = usu_tipo;
+    }
+
+    public Boolean getUsu_ativo() {
+        return usu_ativo;
+    }
+
+    public void setUsu_ativo(Boolean usu_ativo) {
+        this.usu_ativo = usu_ativo;
+    }
+
+    public Boolean getAtivo() {
+        return usu_ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.usu_ativo = ativo;
+    }
     
-    public String getUsu_tipo_usuario() {
-        return usu_tipo_usuario;
-    }
-
-    public void setUsu_tipo_usuario(String usu_tipo_usuario) {
-        this.usu_tipo_usuario = usu_tipo_usuario;
-    }
-
-       
+    
     public Integer getUsu_cod() {
         return usu_cod;
     }
@@ -68,6 +83,6 @@ public class Usuario {
         this.usu_nome = usu_nome;
     }
 
-       
+     
     
 }

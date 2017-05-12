@@ -109,7 +109,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btListar5" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btListar1" linkSize="2" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Component id="btListar" linkSize="2" min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -120,7 +120,7 @@
                   <Component id="btListar3" linkSize="1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btListar4" linkSize="1" alignment="0" max="32767" attributes="0"/>
                   <Component id="btListar5" linkSize="1" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="btListar1" linkSize="1" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="btListar" linkSize="1" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -139,14 +139,14 @@
                 <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="btNovo.setToolTipText(&quot;Novo&quot;);"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="btListar1">
+            <Component class="javax.swing.JButton" name="btListar">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/icon/Listar.png"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListar1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btListarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btSalvar">
